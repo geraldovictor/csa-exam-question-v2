@@ -27,7 +27,7 @@ body {
     border: 1px solid #aaa;
     border-radius: 5px;
     margin-bottom: 0.5rem;
-    overflow: hidden; /* Ensures inner segments don't poke out */
+    overflow: hidden; 
 }
 
 #progress-text {
@@ -82,10 +82,16 @@ body {
     font-size: 1rem;
     cursor: pointer;
     outline: none;
+    text-align: left;
 }
 
-.btn:hover {
+.btn:hover:not(:disabled) {
     background-color: #d0d0d0;
+}
+
+.btn.selected {
+    background-color: #aadaff;
+    border-color: #007bff;
 }
 
 .btn.correct {
@@ -98,11 +104,16 @@ body {
     color: white;
 }
 
+.btn:disabled {
+    cursor: not-allowed;
+}
 
-.start-btn, .next-btn, .restart-btn {
+
+.start-btn, .next-btn, .restart-btn, .check-btn {
     font-size: 1.2rem;
     font-weight: bold;
     padding: 10px 20px;
+    text-align: center;
 }
 
 .controls {
@@ -110,6 +121,7 @@ body {
     justify-content: center;
     align-items: center;
     margin-bottom: 1rem;
+    gap: 10px;
 }
 
 #navigation-container {
