@@ -99,7 +99,8 @@ function showQuestion(question) {
 
     options.forEach(optionText => {
         const button = document.createElement('button');
-        button.innerText = optionText;
+        // button.innerText = optionText;
+        button.innerHTML = optionText;
         button.classList.add('btn');
         
         if (isAnswered(currentQuestionIndex)) {
